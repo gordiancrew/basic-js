@@ -16,9 +16,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 function createDreamTeam(members) {
   let arr = [];
   let res = "";
-  function CheckSpaces(x) {
-    return x.trim() == '';
-  }
+ if(typeof members!= "object"||members=== null||Array.isArray(members)!=true){
+  return false;
+ }else{
   for (x of members) {
 
     if (typeof x === "string") {
@@ -36,6 +36,7 @@ function createDreamTeam(members) {
     res = res + letter;
   }
   return res;
+}
 }
 
 module.exports = {
